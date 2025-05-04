@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.example.booking</groupId>
+	<artifactId>booking-system</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Booking System</name>
+	<description>Booking System</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.4.1</version>
+		<relativePath />
+	</parent>
+
+	<properties>
+		<java.version>21</java.version>
+		<booking.system.version>0.0.1-SNAPSHOT</booking.system.version>
+		<springdoc.version>2.5.0</springdoc.version>
+		<postgresql.version>42.7.5</postgresql.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-dependencies</artifactId>
+			<version>3.4.1</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+			<dependency>
+				<groupId>com.example.booking</groupId>
+				<artifactId>booking-common</artifactId>
+				<version>${booking.system.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.example.booking</groupId>
+				<artifactId>booking-application</artifactId>
+				<version>${booking.system.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.example.booking</groupId>
+				<artifactId>booking-core-domain</artifactId>
+				<version>${booking.system.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.example.booking</groupId>
+				<artifactId>booking-package</artifactId>
+				<version>${booking.system.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.example.booking</groupId>
+				<artifactId>booking-user</artifactId>
+				<version>${booking.system.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.example.booking</groupId>
+				<artifactId>booking-auth</artifactId>
+				<version>${booking.system.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgresql.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<modules>
+		<module>booking-core-domain</module>
+		<module>booking-common</module>
+		<module>booking-user</module>
+		<module>booking-package</module>
+		<module>booking-application</module>
+		<module>booking-auth</module>
+	</modules>
+</project>
